@@ -10,8 +10,8 @@ from selenium.webdriver.support import expected_conditions as EC
 
 URL = os.getenv('FH_URL')
 
-#OPTIONS = Options()
-#OPTIONS.add_argument("--headless")
+#options = Options()
+#options.add_argument("--headless")
 
 #browser = webdriver.Firefox(options=OPTIONS)
 browser = webdriver.Firefox()
@@ -20,12 +20,12 @@ browser.get(URL)
 
 sleep(10)
 
-SOURCE = browser.page_source
+source = browser.page_source
 
-SOUP = BeautifulSoup(SOURCE, "lxml")
+soup = BeautifulSoup(source, "lxml")
 
-ROWS = SOUP.find_all('tr', class_="Table2__td Table2__td--fixed-width")
+rows = soup.find_all('tr', class_="Table2__tr Table2__tr--lg Table2__odd")
 
-PLAYERS = ROWS[1].find_all('span')
+players = rows[1].find_all('span')
 
-print(PLAYERS)
+print(players)
