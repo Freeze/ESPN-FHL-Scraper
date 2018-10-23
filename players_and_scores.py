@@ -28,4 +28,5 @@ rows = soup.find_all('tr', class_="Table2__tr Table2__tr--lg Table2__odd")
 
 players = rows[1].find_all('span')
 
-print(players)
+for x in players:
+    print(x.text)
