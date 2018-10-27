@@ -43,3 +43,4 @@ for x in rows:
     print(x.text)
 
 write_to_csv(players, "A_FILE")
+browser.quit()
