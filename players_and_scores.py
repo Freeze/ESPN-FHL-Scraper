@@ -43,4 +43,4 @@ for x in rows:
 
 write_to_csv(rows, "A_FILE")
 
-
+browser.quit()
