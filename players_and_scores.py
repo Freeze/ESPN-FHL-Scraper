@@ -30,3 +30,16 @@ players = rows[1].find_all('span')
 
 for x in rows:
     print(x.text)
+
+
+
+#Method list
+def write_to_csv(data_list,file_name):
+    
+   csv_file = open(file_name, 'w')  
+    
+   csvwriter = csv.writer(csv_file)
+    
+   csvwriter.writerows(data_list)
+
+   csv_file.close()
