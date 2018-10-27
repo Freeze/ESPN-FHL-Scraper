@@ -18,7 +18,7 @@ browser = webdriver.Firefox()
 
 browser.get(URL)
 
-sleep(10)
+sleep(15)
 
 source = browser.page_source
 
@@ -31,8 +31,6 @@ players = rows[1].find_all('span')
 for x in rows:
     print(x.text)
 
-
-
 #Method list
 def write_to_csv(data_list,file_name):
     
@@ -43,3 +41,5 @@ def write_to_csv(data_list,file_name):
    csvwriter.writerows(data_list)
 
    csv_file.close()
+
+write_to_csv(players, "A_FILE")
