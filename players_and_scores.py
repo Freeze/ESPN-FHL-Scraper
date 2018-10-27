@@ -8,20 +8,18 @@ from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+
 #Method list
 def write_to_csv(data_list,file_name):
-    
-   csv_file = open(file_name, 'w')  
-    
+
+   csv_file = open(file_name, 'w')
+
    csvwriter = csv.writer(csv_file)
 
    csvwriter.writerows(data_list)
 
    csv_file.close()
-
-
-URL = os.getenv('FH_URL')
-
+  
 browser = webdriver.Firefox()
 
 browser.get(URL)
@@ -36,6 +34,10 @@ player_info = soup.find_all('tr', class_="Table2__tr Table2__tr--lg Table2__odd"
 
 player_names = soup.find_all('a', class_="link clr-link pointer")
 
-write_to_csv(rows, "player_names.csv")
+write_to_csv(player_names, "player_names.csv")
+
+for x in rows:
+    print(x.text)
 
 
+browser.quit()
