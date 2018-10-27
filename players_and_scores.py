@@ -30,15 +30,14 @@ source = browser.page_source
 
 soup = BeautifulSoup(source, "lxml")
 
-rows = soup.find_all('tr', class_="Table2__tr Table2__tr--lg Table2__odd")
+player_info = soup.find_all('tr', class_="Table2__tr Table2__tr--lg Table2__odd")
 
-rows = soup.find_all('a', class_="link clr-link pointer")
+player_names = soup.find_all('a', class_="link clr-link pointer")
 
-players = rows[1].find_all('span')
+write_to_csv(player_names, "player_names.csv")
 
 for x in rows:
     print(x.text)
 
 
-write_to_csv(players, "A_FILE")
 browser.quit()
