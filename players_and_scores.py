@@ -15,8 +15,7 @@ def write_to_csv(data_list,file_name):
     
    csvwriter = csv.writer(csv_file)
 
-   for row in data_list:    
-       csvwriter.writerows(row)
+   csvwriter.writerows(data_list)
 
    csv_file.close()
 
@@ -46,4 +45,6 @@ players = rows[1].find_all('span')
 for x in rows:
     print(x.text)
 
-write_to_csv(players, "A_FILE")
+write_to_csv(rows, "A_FILE")
+
+
