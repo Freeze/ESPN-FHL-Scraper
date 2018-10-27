@@ -10,10 +10,6 @@ from selenium.webdriver.support import expected_conditions as EC
 
 URL = os.getenv('FH_URL')
 
-#options = Options()
-#options.add_argument("--headless")
-
-#browser = webdriver.Firefox(options=OPTIONS)
 browser = webdriver.Firefox()
 
 browser.get(URL)
