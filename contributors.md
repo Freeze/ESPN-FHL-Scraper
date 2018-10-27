@@ -1,3 +1,3 @@
 # Contributors
 - [Alexander Wolkenhauer] (https://github.com/blinkmage)
-- [Johnnie BIG DICK]
+- [Johnnie Large Richard]

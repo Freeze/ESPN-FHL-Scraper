@@ -36,8 +36,4 @@ player_names = soup.find_all('a', class_="link clr-link pointer")
 
 write_to_csv(player_names, "player_names.csv")
 
-for x in rows:
-    print(x.text)
-
-
 browser.quit()
