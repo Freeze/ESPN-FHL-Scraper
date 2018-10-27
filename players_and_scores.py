@@ -8,21 +8,18 @@ from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+
 #Method list
 def write_to_csv(data_list,file_name):
-    
-   csv_file = open(file_name, 'w')  
-    
+
+   csv_file = open(file_name, 'w')
+
    csvwriter = csv.writer(csv_file)
 
-   for row in data_list:    
-       csvwriter.writerows(row)
+   csvwriter.writerows(data_list)
 
    csv_file.close()
-
-
-URL = os.getenv('FH_URL')
-
+  
 browser = webdriver.Firefox()
 
 browser.get(URL)
@@ -41,6 +38,7 @@ players = rows[1].find_all('span')
 
 for x in rows:
     print(x.text)
+
 
 write_to_csv(players, "A_FILE")
 browser.quit()
