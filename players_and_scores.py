@@ -8,6 +8,7 @@ from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+URL = os.getenv('FH_URL')
 
 #Method list
 def write_to_csv(data_list,file_name):
