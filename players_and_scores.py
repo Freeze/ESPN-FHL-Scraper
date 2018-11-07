@@ -2,10 +2,19 @@
 import sys, os
 import csv, json
 from time import sleep
-from selenium import webdriver
-from bs4 import BeautifulSoup
-from selenium.webdriver.firefox.options import Options
+#from selenium import webdriver
+#from bs4 import BeautifulSoup
+#from selenium.webdriver.firefox.options import Options
 
+def install_and_import(package):
+    import importlib
+    try:
+        importlib.import_module(package)
+    except ImportError:
+        import pip
+        pip.main(['install', package])
+    finally:
+        globals()[package] = importlib.import_module(package)
 
 #URL = os.getenv('FH_URL')
 
@@ -58,6 +67,10 @@ def load_page(page):
   browser.quit()
   return(page_source)
 
+package_list = ['selenium','bs4']
+
+for package in package_list
+  install_and_import(package)
 
 data = load_page(LEAGUE_URL)
 get_league_rosters(data)
